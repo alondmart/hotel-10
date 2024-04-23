@@ -411,20 +411,24 @@ nav li.active a {
   color: #3d5ccd;
 }
 
-div.allCards section {
+main #allCards section {
   display: grid;
   grid-template-areas: "name" "photo" "address" "phone";
 }
-div.allCards section img {
-  grid-area: photo;
-}
-div.allCards section h2 {
+main #allCards section h2 {
   grid-area: name;
 }
-div.allCards section address {
+main #allCards section img {
+  grid-area: photo;
+  display: block;
+  width: 100%;
+  height: auto;
+  padding-bottom: 0.5rem;
+}
+main #allCards section address {
   grid-area: address;
 }
-div.allCards section a {
+main #allCards section a {
   grid-area: phone;
 }
 
@@ -453,10 +457,22 @@ footer p {
   #pageWrapper {
     overflow-x: hidden;
   }
-  section {
-    grid-template-areas: "photo name" "photo address" "photo phone";
+  main #allCards section {
     grid-template-columns: 250px auto;
-    column-gap: 8px;
+    grid-template-areas: "photo name" "photo address" "photo phone";
+    column-gap: 10px;
+  }
+  main #allCards section h2 {
+    grid-area: name;
+  }
+  main #allCards section img {
+    grid-area: photo;
+  }
+  main #allCards section address {
+    grid-area: address;
+  }
+  main #allCards section a {
+    grid-area: phone;
   }
 }
 @media only screen and (min-width: 60rem) {

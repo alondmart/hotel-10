@@ -108,24 +108,33 @@ nav {
 } //end nav
 
 // MAIN STUFF
-div.allCards {
-    section {
-        display: grid;
-        grid-template-areas: 
-        "name"
-        "photo"
-        "address"
-        "phone";
-        img {grid-area: photo;}
-        h2 {grid-area: name;}
-        address {grid-area: address;}
-        a {grid-area: phone;}
 
+
+
+main {
+    #allCards section {
+    display: grid;
+    grid-template-areas:
+    "name"
+    "photo"
+    "address"
+    "phone";
+ 
+    h2 {grid-area: name;}
+   
+    img {
+        grid-area: photo;
+        display: block;
+        width: 100%;
+        height: auto;
+        padding-bottom: .5rem;
     }
+   
+    address {grid-area: address;}
+    a {grid-area: phone;}
+    } //end section
+ 
 }
-
-
-
 // footer stuff start
 #footerWrapper {
     background-color: $primaryColor;
@@ -140,3 +149,6 @@ footer {
         color: white;
     }
 }
+
+
+// change div#all cards to shorter

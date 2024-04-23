@@ -10,11 +10,24 @@ header {
     overflow-x: hidden; //this keeps it from being scrollable
 }
 
-section {
-    grid-template-areas: 
-    "photo name"
-    "photo address"
-    "photo phone";
-    grid-template-columns: 250px auto;
-    column-gap: 8px;
+
+
+main {
+    #allCards section {
+        grid-template-columns: 250px auto;
+        grid-template-areas:
+        "photo name"
+        "photo address"
+        "photo phone";
+        column-gap: 10px;
+        h2 {grid-area: name;}
+        img {grid-area: photo;}
+   
+        address {grid-area: address;}
+        a {grid-area: phone;}
+ 
+   
+ 
+    } //end section
+ 
 }
