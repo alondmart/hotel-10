@@ -1,0 +1,142 @@
+/* Prevent adjustments of font size after orientation changes.  */
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+    height: 100%;
+  }
+  
+  /*---- apply a natural box layout model to all elements -------*/
+  * {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+body {
+    height: 100%;
+    font-family: $defaultFont;
+    font-weight: $normalWeight;
+    color: $fontColor;
+}
+
+#headerWrapper {
+    background-color: $secondaryColor;
+    color: $primaryColor;
+}
+
+// header {
+//     display: flex;
+//     align-items: flex-end;
+//     padding: 1rem $gutter;
+//     gap: 8px;
+//     h1 {
+//         margin: 0;
+//         font-size: 1.2rem;
+//         font-weight: $normalWeight;
+//     }
+// }
+
+
+#pageWrapper {
+    position: relative;
+    overflow-x: hidden; //this keeps it from being scrollable
+}
+.moveOver>.content {transform: translateX(-180px);}
+.content {transition: transform 500ms ease;}
+
+/* HEADER  */
+header {
+    display: grid;
+    grid-template-columns: 51px auto 48px;
+    align-items: center;
+	padding: .5rem 2vw;
+	h1 {
+        font-size: 1.6rem;
+        font-weight: $boldWeight;
+        padding-left: .5rem;
+        color: $primaryColor;
+    } //end h1
+    button {
+        width: 48px;
+        height: 48px;
+        margin: 0;
+        align-self: start;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        text-align: right;
+        color: #444;
+    } //end button
+} // end header
+
+/* NAVIGATION STUFF GOES HERE  */
+nav {
+    background-color: #eee;
+    width: 180px; //this is wide enough so that none of the li wrap to 2 lines in the ul. make it wider if needed
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    transform: translateX(100%);
+    div { // the "design thinking" div
+        display: block;
+        text-align: center;
+        padding: 1.5rem;
+        font-size: 1.1rem;
+        background-color: #666;
+        color: #fff;
+    }
+    ul {
+        padding-left: 0;
+        list-style-type: none;
+        li {
+
+            a {
+                display: block;
+                padding: .9rem .5rem;
+                text-align: right;
+                border-bottom: solid 1px rgba(0,0,0,.25);
+                text-decoration: none;
+                color: black;
+                &:hover { background-color: $secondaryColor; } //color: white;
+            } //end a
+        } //end li
+    } // end ul
+
+    li.active a {color: $primaryColor;}
+} //end nav
+
+// MAIN STUFF
+div.allCards {
+    section {
+        display: grid;
+        grid-template-areas: 
+        "name"
+        "photo"
+        "address"
+        "phone";
+        img {grid-area: photo;}
+        h2 {grid-area: name;}
+        address {grid-area: address;}
+        a {grid-area: phone;}
+
+    }
+}
+
+
+
+// footer stuff start
+#footerWrapper {
+    background-color: $primaryColor;
+}
+
+footer {
+    padding: 0.5rem $gutter;
+    p {
+        margin: 0;
+        font-weight: $lightWeight;
+        text-align: center;
+        color: white;
+    }
+}
