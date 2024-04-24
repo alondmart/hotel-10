@@ -326,14 +326,14 @@ html {
 
 body {
   height: 100%;
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
+  font-family: "Platypi", serif;
+  font-weight: 500;
   color: #333;
 }
 
 #headerWrapper {
-  background-color: #d7deff;
-  color: #3d5ccd;
+  background-color: #ede6e3;
+  color: #534741;
 }
 
 #pageWrapper {
@@ -358,9 +358,9 @@ header {
 }
 header h1 {
   font-size: 1.6rem;
-  font-weight: 600;
+  font-weight: 700;
   padding-left: 0.5rem;
-  color: #3d5ccd;
+  color: #534741;
 }
 header button {
   width: 48px;
@@ -376,7 +376,7 @@ header button {
 
 /* NAVIGATION STUFF GOES HERE  */
 nav {
-  background-color: #eee;
+  background-color: #ede6e3;
   width: 180px;
   position: absolute;
   top: 0;
@@ -389,10 +389,13 @@ nav div {
   text-align: center;
   padding: 1.5rem;
   font-size: 1.1rem;
-  background-color: #666;
-  color: #fff;
+  background-color: #ede6e3;
+  color: #333;
+  font-weight: 700;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.25);
 }
 nav ul {
+  margin: 0;
   padding-left: 0;
   list-style-type: none;
 }
@@ -405,35 +408,70 @@ nav ul li a {
   color: black;
 }
 nav ul li a:hover {
-  background-color: #d7deff;
+  background-color: #ddd0ca;
+  color: black;
 }
 nav li.active a {
-  color: #3d5ccd;
+  background-color: #baada6;
+  color: black;
+}
+
+#allCards {
+  margin: 16px;
+}
+
+main h1 {
+  margin-left: 16px;
+  margin-right: 16px;
+  margin-top: 16px;
+  margin-bottom: 0;
+  color: #534741;
 }
 
 main #allCards section {
   display: grid;
   grid-template-areas: "name" "photo" "address" "phone";
+  background-color: #ede6e3;
+  border: solid 1px #534741;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 16px 0;
+}
+main #allCards section address, main #allCards section a {
+  margin: 10px;
 }
 main #allCards section h2 {
   grid-area: name;
+  margin: 0;
+  padding: 10px;
 }
 main #allCards section img {
   grid-area: photo;
   display: block;
   width: 100%;
   height: auto;
-  padding-bottom: 0.5rem;
 }
 main #allCards section address {
   grid-area: address;
+  font-weight: 500;
 }
 main #allCards section a {
   grid-area: phone;
+  text-decoration: none;
+  color: white;
+  border: solid 1px;
+  background-color: #534741;
+  text-align: center;
+  border-radius: 5px;
+  padding: 0.75rem;
+  font-weight: 300;
+}
+main #allCards section a:hover {
+  background-color: #362f2b;
 }
 
 #footerWrapper {
-  background-color: #3d5ccd;
+  background-color: #534741;
 }
 
 footer {
@@ -441,18 +479,18 @@ footer {
 }
 footer p {
   margin: 0;
-  font-weight: 200;
+  font-weight: 300;
   text-align: center;
   color: white;
 }
 
 @media only screen and (min-width: 35rem) {
   header {
-    padding: 2rem 16px;
+    padding: 0.5rem 16px;
   }
   header h1 {
     font-size: 2rem;
-    font-weight: 600;
+    font-weight: 700;
   }
   #pageWrapper {
     overflow-x: hidden;
@@ -461,6 +499,7 @@ footer p {
     grid-template-columns: 250px auto;
     grid-template-areas: "photo name" "photo address" "photo phone";
     column-gap: 10px;
+    align-items: stretch;
   }
   main #allCards section h2 {
     grid-area: name;
@@ -481,7 +520,7 @@ footer p {
     margin: auto;
   }
   #navWrapper {
-    background-color: orange;
+    background-color: #ede6e3;
   }
   #hamburgerBtn {
     display: none;
@@ -504,5 +543,14 @@ footer p {
   nav ul li a {
     border: none;
     border-right: solid 1px rgba(0, 0, 0, 0.2);
+    padding: 0.5rem 1rem;
+  }
+  main #allCards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 16px;
+  }
+  main #allCards img {
+    align-self: stretch;
   }
 }

@@ -72,7 +72,7 @@ header {
 
 /* NAVIGATION STUFF GOES HERE  */
 nav {
-    background-color: #eee;
+    background-color: $secondaryColor;
     width: 180px; //this is wide enough so that none of the li wrap to 2 lines in the ul. make it wider if needed
     position: absolute;
     top: 0;
@@ -84,10 +84,13 @@ nav {
         text-align: center;
         padding: 1.5rem;
         font-size: 1.1rem;
-        background-color: #666;
-        color: #fff;
+        background-color: $secondaryColor;
+        color: $fontColor;
+        font-weight: $boldWeight;
+        border-bottom: solid 1px rgba(0,0,0,.25);
     }
     ul {
+        margin: 0;
         padding-left: 0;
         list-style-type: none;
         li {
@@ -99,42 +102,81 @@ nav {
                 border-bottom: solid 1px rgba(0,0,0,.25);
                 text-decoration: none;
                 color: black;
-                &:hover { background-color: $secondaryColor; } //color: white;
+                &:hover { background-color: darken($secondaryColor, 8%); color: black;} //color: white;
             } //end a
         } //end li
     } // end ul
 
-    li.active a {color: $primaryColor;}
+    li.active a {background-color: lighten($primaryColor, 40%); color: black;}
 } //end nav
 
+
+
 // MAIN STUFF
-
-
-
-main {
-    #allCards section {
-    display: grid;
-    grid-template-areas:
-    "name"
-    "photo"
-    "address"
-    "phone";
- 
-    h2 {grid-area: name;}
-   
-    img {
-        grid-area: photo;
-        display: block;
-        width: 100%;
-        height: auto;
-        padding-bottom: .5rem;
-    }
-   
-    address {grid-area: address;}
-    a {grid-area: phone;}
-    } //end section
- 
+#allCards{margin: $gutter}
+main h1 {
+    margin-left: $gutter;
+    margin-right: $gutter;
+    margin-top: $gutter;
+    margin-bottom: 0;
+    color: $primaryColor;
 }
+main {
+    #allCards {
+        section {
+        display: grid;
+        grid-template-areas:
+        "name"
+        "photo"
+        "address"
+        "phone";
+            
+        address, a {margin: 10px;}
+
+        h2 {
+            grid-area: name;
+            // background-color: lightblue;
+            margin: 0;
+            padding: 10px;
+        }
+    
+        img {
+            grid-area: photo;
+            display: block;
+            width: 100%;
+            height: auto;
+            // padding-bottom: .5rem;
+        }
+    
+        address {
+            grid-area: address;
+            font-weight: $normalWeight;
+        }
+        a {
+            grid-area: phone;
+            text-decoration: none;
+            color: white;
+            border: solid 1px;
+            background-color: $primaryColor;
+            text-align: center;
+            border-radius: 5px;
+            padding: .75rem;
+            font-weight: $lightWeight;
+            &:hover {
+                background-color: darken($primaryColor, 10%);
+            }
+        }
+        background-color: $secondaryColor;
+        border: solid 1px $primaryColor;
+        border-radius: 10px;
+        overflow: hidden;
+        margin: $gutter 0;
+        } //end section 
+ } // end #allCards
+} // end main
+
+
+
 // footer stuff start
 #footerWrapper {
     background-color: $primaryColor;

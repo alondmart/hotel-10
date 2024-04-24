@@ -1,5 +1,5 @@
 header {
- padding: 2rem $gutter;
+ padding: .5rem $gutter;
  h1 {
     font-size: 2rem;
     font-weight: $boldWeight;
@@ -20,14 +20,12 @@ main {
         "photo address"
         "photo phone";
         column-gap: 10px;
+        align-items: stretch;
+
         h2 {grid-area: name;}
         img {grid-area: photo;}
    
         address {grid-area: address;}
         a {grid-area: phone;}
- 
-   
- 
     } //end section
- 
 }

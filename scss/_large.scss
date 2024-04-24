@@ -4,7 +4,7 @@ header, nav, main {
 }
 
 // NAV STUFF
-#navWrapper {background-color: orange;}
+#navWrapper {background-color: $secondaryColor;}
 #hamburgerBtn {display:none;}
 nav {
     position: static; //this undoes the position: absolute from the small styles
@@ -21,7 +21,19 @@ nav {
             a {
                 border: none;
                 border-right: solid 1px rgba(0,0,0,.2) ;
+                padding:  .5rem 1rem;
             } //end a
         } //end li
     } // end ul
 } // end nav
+
+
+// MAIN STUFF
+main {
+    #allCards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: $gutter;
+        img {align-self: stretch;}
+    } //end section
+}
